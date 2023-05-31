@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "9af7f048-8fb9-4a6b-8ed2-92dcef23ad51",
+		"name": "Serwis samochodowy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[Login] Logowanie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"admin\",\r\n    \"haslo\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/login",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Register] Dodawanie użytkownika",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"admin\",\r\n    \"haslo\": \"admin123\",\r\n    \"imie\": \"Admin\",\r\n    \"nazwisko\": \"PL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/register",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Register] Aktualizacja użytkownika",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"admin\",\r\n    \"haslo\": \"admin123\",\r\n    \"imie\" : \"admin\",\r\n    \"nazwisko\" : \"PL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/register/admin",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"register",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Register] Usuwanie użytkownika",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/register/admin",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"register",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Klienci] Pobieranie klientów",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/klienci",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"klienci"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Klienci] Pobieranie konkretnego klienta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/klienci/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"klienci",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Klienci] Dodawanie nowego klienta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imie\": \"Krzysztof\",\r\n    \"nazwisko\": \"Kononowicz\",\r\n    \"pesel\": \"95013053385\",\r\n    \"ulica\": \"Szkolna 5\",\r\n    \"kodPocztowy\": \"81-001\",\r\n    \"miasto\": \"Białystok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/klienci",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"klienci"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Klienci] Aktualizacja danych klienta",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imie\": \"Krzychu\",\r\n    \"nazwisko\": \"Kononowicz\",\r\n    \"pesel\": \"95013053385\",\r\n    \"ulica\": \"Szkolna 5\",\r\n    \"kodPocztowy\": \"81-001\",\r\n    \"miasto\": \"Białystok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/klienci/6",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"klienci",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Klienci] Usuwanie klienta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/klienci/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"klienci",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Auta] Pobieranie aut",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/auta",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Auta] Pobieranie dodatkowych informacji po id auta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/auta/2/api",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auta",
+						"2",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Auta] Pobieranie konkretnego auta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/auta/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Auta] Dodawanie nowego auta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vin\" : \"DASDA66788A9SD877\",\r\n    \"nrTablicy\" : \"PO1337\", \r\n    \"marka\" : \"Peugeot\", \r\n    \"rocznik\" : \"2000\", \r\n    \"przebieg\" : \"179000\", \r\n    \"idKlienta\" : \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/auta",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Auta] Aktaulizacja auta",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vin\" : \"DASDA66788A9SD877\",\r\n    \"nrTablicy\" : \"PO1337\", \r\n    \"marka\" : \"BMW\", \r\n    \"rocznik\" : \"2000\", \r\n    \"przebieg\" : \"179000\", \r\n    \"idKlienta\" : \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/auta/2",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auta",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Auta] Usuwanie auta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/auta/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Naprawy] Pobieranie napraw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/naprawy",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"naprawy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Naprawy] Pobieranie konkretnej naprawy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/naprawy/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"naprawy",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Naprawy] Dodawanie naprawy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nazwa\": \"Naprawa nr 1\",\r\n    \"cena\": 15,\r\n    \"status\": 1,\r\n    \"idAuta\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/naprawy",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"naprawy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Naprawy] Aktualizacja naprawy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nazwa\": \"Naprawa nr 1\",\r\n    \"cena\": 15,\r\n    \"status\": 1,\r\n    \"idAuta\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/naprawy/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"naprawy",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Naprawy] Usuwanie naprawy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/naprawy/1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"naprawy",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "https://api.srym.pl/",
+			"type": "default"
+		}
+	]
+}
