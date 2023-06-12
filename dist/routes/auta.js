@@ -55,7 +55,7 @@ router.get('/:id/api', (req, res) => {
             return res.status(400).json({ message: `Brak auta o id: ${req.params.id}` });
         }
         const resoult = yield axios_1.default.get(`https://api.api-ninjas.com/v1/cars?make=${result[0].marka}&year=${result[0].rocznik}`, {
-            headers: { 'X-Api-Key': '0A1HnPx1wIxQa7oRyhWAPA==UgPgnkjFrtD3khGv' }
+            headers: { 'X-Api-Key': process.env.API_KEY }
         });
         if (resoult.status < 200 && resoult.status >= 300)
             return res.status(400).json({ message: 'Wystąpił błąd!' });

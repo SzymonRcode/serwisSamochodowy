@@ -41,8 +41,9 @@ router.patch('/:login', (req, res) => __awaiter(void 0, void 0, void 0, function
         return res.status(400).json({ message: `Uzupełnij brakujące pola: ${emptyFields}` });
     }
     const pass = yield bcrypt_1.default.hash(body.haslo, 10);
-    const sql = `UPDATE uzytkownicy SET haslo = "${pass}, imie = "${body.imie}", nazwisko = "${body.nazwisko}" 
+    const sql = `UPDATE uzytkownicy SET haslo = "${pass}", imie = "${body.imie}", nazwisko = "${body.nazwisko}" 
                                 WHERE login = "${req.params.login}"`;
+    console.log(sql);
     connect_1.default.query(sql, (error, result) => {
         if (error || result.affectedRows < 1) {
             return res.status(400).json({ message: `Użytkownik '${req.params.login}' nie istnieje!` });
